@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController" customModule="CalKeyboard" customModuleProvider="target">
             <connections>
+                <outlet property="deleteKeyboardButton" destination="hS6-hX-Bjr" id="evl-MC-40i"/>
+                <outlet property="hashtagKeyboardButton" destination="nYz-Zu-gV9" id="xOY-B7-sbf"/>
                 <outlet property="nextKeyboardButton" destination="gRt-12-JcF" id="CWQ-gG-G2m"/>
+                <outlet property="noseGoesKeyboardButton" destination="elg-lX-AVz" id="Hm3-7N-vvF"/>
+                <outlet property="returnKeyboardButton" destination="ESf-Qw-d5g" id="iaK-35-I7M"/>
+                <outlet property="shrugKeyboardButton" destination="cad-F5-JQj" id="lBg-uq-VFm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,17 +21,77 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-12-JcF">
-                    <rect key="frame" x="8" y="162" width="30" height="30"/>
+                    <rect key="frame" x="8" y="162" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.54275792198189077" green="0.818776429844147" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-Qw-d5g">
+                    <rect key="frame" x="287" y="162" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.54275792198189077" green="0.818776429844147" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Return">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-hX-Bjr">
+                    <rect key="frame" x="287" y="8" width="80" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.48585807178536533" blue="0.47977181356701015" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-Zu-gV9">
+                    <rect key="frame" x="147" y="85" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Hashtagify!">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cad-F5-JQj">
+                    <rect key="frame" x="287" y="85" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Shrug">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lX-AVz">
+                    <rect key="frame" x="8" y="85" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="eu0-xj-Jov"/>
-                        <constraint firstAttribute="height" constant="30" id="rFT-bm-aBM"/>
+                        <constraint firstAttribute="width" constant="80" id="BG8-S4-SOH"/>
                     </constraints>
-                    <state key="normal" title="N"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="NoseGoes">
+                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
                 </button>
             </subviews>
+            <color key="backgroundColor" red="0.27457665520256164" green="0.22449275575038369" blue="0.39818102904040409" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
             <constraints>
-                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="LUD-YX-JVD"/>
-                <constraint firstAttribute="bottom" secondItem="gRt-12-JcF" secondAttribute="bottom" constant="8" id="tEE-h3-FZa"/>
+                <constraint firstItem="nYz-Zu-gV9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Es-Fr-MEa"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="leading" secondItem="hS6-hX-Bjr" secondAttribute="leading" id="9gk-HZ-Pxh"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="trailing" secondItem="ESf-Qw-d5g" secondAttribute="trailing" id="Dyf-U9-8Co"/>
+                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="elg-lX-AVz" secondAttribute="leading" id="GIb-X4-r6C"/>
+                <constraint firstItem="gRt-12-JcF" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="Hfh-RW-81C"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="baseline" secondItem="nYz-Zu-gV9" secondAttribute="baseline" id="ImF-V5-jlm"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="trailing" secondItem="hS6-hX-Bjr" secondAttribute="trailing" id="KuS-fb-aGc"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="leading" secondItem="nYz-Zu-gV9" secondAttribute="trailing" constant="60" id="M95-Tf-Dss"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RzE-OY-m4s"/>
+                <constraint firstItem="nYz-Zu-gV9" firstAttribute="leading" secondItem="elg-lX-AVz" secondAttribute="trailing" constant="59" id="TGE-uH-Yy3"/>
+                <constraint firstItem="hS6-hX-Bjr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="aOs-So-ZSw"/>
+                <constraint firstItem="ESf-Qw-d5g" firstAttribute="baseline" secondItem="gRt-12-JcF" secondAttribute="baseline" id="dSC-Hu-AWj"/>
+                <constraint firstItem="ESf-Qw-d5g" firstAttribute="leading" secondItem="cad-F5-JQj" secondAttribute="leading" id="dWG-OW-teT"/>
+                <constraint firstItem="ESf-Qw-d5g" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="fhh-yr-KMb"/>
+                <constraint firstItem="elg-lX-AVz" firstAttribute="trailing" secondItem="gRt-12-JcF" secondAttribute="trailing" id="rhQ-4Z-fMv"/>
+                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="sOB-bY-e6q"/>
+                <constraint firstItem="nYz-Zu-gV9" firstAttribute="baseline" secondItem="elg-lX-AVz" secondAttribute="baseline" id="x9l-vQ-GHz"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

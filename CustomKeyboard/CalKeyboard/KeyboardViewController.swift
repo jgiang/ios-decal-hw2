@@ -10,7 +10,13 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
+
     @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet var returnKeyboardButton: UIButton!
+    @IBOutlet var deleteKeyboardButton: UIButton!
+    @IBOutlet var hashtagKeyboardButton: UIButton!
+    @IBOutlet var noseGoesKeyboardButton: UIButton!
+    @IBOutlet var shrugKeyboardButton: UIButton!
     
     var keyboardView: UIView!
 
@@ -37,7 +43,48 @@ class KeyboardViewController: UIInputViewController {
     override func textDidChange(textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
     }
-
+    
+    func returnClick() {
+        textDocumentProxy.insertText("\n")
+    }
+    
+    func deleteClick() {
+        textDocumentProxy.deleteBackward()
+    }
+    
+    func hashtagClick() {
+        // get all the benefits of autocorrect AND the easy of creating long, sarcastic hashtags
+        let before = textDocumentProxy.documentContextBeforeInput!
+        for (var i = before.characters.count; i > 0; i--) {
+            textDocumentProxy.deleteBackward()
+        }
+        
+        var sections = before.componentsSeparatedByString("#")
+        for (var i = 0; i < sections.count; i++) {
+            if i == 0 {
+                textDocumentProxy.insertText(sections[i])
+            } else {
+                textDocumentProxy.insertText(" #" + sections[i].stringByReplacingOccurrencesOfString(" ", withString: ""))
+            }
+        }
+    }
+    
+    func noseGoesClick() {
+        textDocumentProxy.insertText("👉🏼👃🏼👈🏼\n     👆🏼")
+    }
+    
+    func shrugClick() {
+        textDocumentProxy.insertText("¯\\_(ツ)_/¯")
+    }
+    
+    func loadCustomButtons() {
+        returnKeyboardButton.addTarget(self, action: "returnClick", forControlEvents: .TouchUpInside)
+        deleteKeyboardButton.addTarget(self, action: "deleteClick", forControlEvents: .TouchUpInside)
+        hashtagKeyboardButton.addTarget(self, action: "hashtagClick", forControlEvents: .TouchUpInside)
+        noseGoesKeyboardButton.addTarget(self, action: "noseGoesClick", forControlEvents: .TouchUpInside)
+        shrugKeyboardButton.addTarget(self, action: "shrugClick", forControlEvents: .TouchUpInside)
+    }
+    
     func loadInterface() {
         let keyboardNib = UINib(nibName: "Keyboard", bundle: nil)
         keyboardView = keyboardNib.instantiateWithOwner(self, options: nil)[0] as! UIView
@@ -45,6 +92,7 @@ class KeyboardViewController: UIInputViewController {
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
         nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
+        loadCustomButtons()
     }
 
 
