@@ -2,16 +2,18 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController" customModule="CalKeyboard" customModuleProvider="target">
             <connections>
+                <outlet property="clearKeyboardButton" destination="GaA-nI-PWU" id="p0L-V2-ask"/>
                 <outlet property="deleteKeyboardButton" destination="hS6-hX-Bjr" id="evl-MC-40i"/>
                 <outlet property="hashtagKeyboardButton" destination="nYz-Zu-gV9" id="xOY-B7-sbf"/>
+                <outlet property="leftKeyboardButton" destination="6pV-wE-JDU" id="fAR-JQ-hJq"/>
                 <outlet property="nextKeyboardButton" destination="gRt-12-JcF" id="CWQ-gG-G2m"/>
                 <outlet property="noseGoesKeyboardButton" destination="elg-lX-AVz" id="Hm3-7N-vvF"/>
                 <outlet property="returnKeyboardButton" destination="ESf-Qw-d5g" id="iaK-35-I7M"/>
+                <outlet property="rightKeyboardButton" destination="Tvq-6O-Bmd" id="P4u-RW-to0"/>
                 <outlet property="shrugKeyboardButton" destination="cad-F5-JQj" id="lBg-uq-VFm"/>
             </connections>
         </placeholder>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-12-JcF">
-                    <rect key="frame" x="8" y="162" width="80" height="30"/>
+                    <rect key="frame" x="8" y="162" width="32" height="30"/>
                     <color key="backgroundColor" red="0.54275792198189077" green="0.818776429844147" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Next">
@@ -29,7 +31,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-Qw-d5g">
-                    <rect key="frame" x="287" y="162" width="80" height="30"/>
+                    <rect key="frame" x="322" y="162" width="45" height="30"/>
                     <color key="backgroundColor" red="0.54275792198189077" green="0.818776429844147" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Return">
@@ -37,7 +39,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-hX-Bjr">
-                    <rect key="frame" x="287" y="8" width="80" height="30"/>
+                    <rect key="frame" x="324" y="8" width="43" height="30"/>
                     <color key="backgroundColor" red="1" green="0.48585807178536533" blue="0.47977181356701015" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Delete">
@@ -45,15 +47,15 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-Zu-gV9">
-                    <rect key="frame" x="147" y="85" width="80" height="30"/>
-                    <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="149" y="85" width="76" height="30"/>
+                    <color key="backgroundColor" red="0.60822161060126623" green="1" blue="0.79956191547375044" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Hashtagify!">
                         <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cad-F5-JQj">
-                    <rect key="frame" x="287" y="85" width="80" height="30"/>
+                    <rect key="frame" x="166.5" y="162" width="41" height="30"/>
                     <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="Shrug">
@@ -61,37 +63,50 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lX-AVz">
-                    <rect key="frame" x="8" y="85" width="80" height="30"/>
+                    <rect key="frame" x="151.5" y="8" width="71" height="30"/>
                     <color key="backgroundColor" red="0.5850048213225767" green="1" blue="0.78187015666807158" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="BG8-S4-SOH"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="NoseGoes">
                         <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-wE-JDU">
+                    <rect key="frame" x="8" y="85" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.60822161060126623" green="1" blue="0.79956191547375044" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="&lt;--"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-6O-Bmd">
+                    <rect key="frame" x="337" y="85" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.60822161060126623" green="1" blue="0.79956191547375044" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="--&gt;"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-nI-PWU">
+                    <rect key="frame" x="8" y="8" width="47" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.48585807178536533" blue="0.47977181356701015" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="CLEAR"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.27457665520256164" green="0.22449275575038369" blue="0.39818102904040409" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
             <constraints>
-                <constraint firstItem="nYz-Zu-gV9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Es-Fr-MEa"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="leading" secondItem="hS6-hX-Bjr" secondAttribute="leading" id="9gk-HZ-Pxh"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="trailing" secondItem="ESf-Qw-d5g" secondAttribute="trailing" id="Dyf-U9-8Co"/>
-                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="elg-lX-AVz" secondAttribute="leading" id="GIb-X4-r6C"/>
-                <constraint firstItem="gRt-12-JcF" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="Hfh-RW-81C"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="baseline" secondItem="nYz-Zu-gV9" secondAttribute="baseline" id="ImF-V5-jlm"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="trailing" secondItem="hS6-hX-Bjr" secondAttribute="trailing" id="KuS-fb-aGc"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="leading" secondItem="nYz-Zu-gV9" secondAttribute="trailing" constant="60" id="M95-Tf-Dss"/>
-                <constraint firstItem="cad-F5-JQj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RzE-OY-m4s"/>
-                <constraint firstItem="nYz-Zu-gV9" firstAttribute="leading" secondItem="elg-lX-AVz" secondAttribute="trailing" constant="59" id="TGE-uH-Yy3"/>
-                <constraint firstItem="hS6-hX-Bjr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="aOs-So-ZSw"/>
-                <constraint firstItem="ESf-Qw-d5g" firstAttribute="baseline" secondItem="gRt-12-JcF" secondAttribute="baseline" id="dSC-Hu-AWj"/>
-                <constraint firstItem="ESf-Qw-d5g" firstAttribute="leading" secondItem="cad-F5-JQj" secondAttribute="leading" id="dWG-OW-teT"/>
-                <constraint firstItem="ESf-Qw-d5g" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="fhh-yr-KMb"/>
-                <constraint firstItem="elg-lX-AVz" firstAttribute="trailing" secondItem="gRt-12-JcF" secondAttribute="trailing" id="rhQ-4Z-fMv"/>
-                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="sOB-bY-e6q"/>
-                <constraint firstItem="nYz-Zu-gV9" firstAttribute="baseline" secondItem="elg-lX-AVz" secondAttribute="baseline" id="x9l-vQ-GHz"/>
+                <constraint firstAttribute="bottom" secondItem="gRt-12-JcF" secondAttribute="bottom" constant="8" id="239-12-UHs"/>
+                <constraint firstItem="cad-F5-JQj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-0.5" id="Aj6-iR-HKx"/>
+                <constraint firstItem="gRt-12-JcF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CmH-ur-8LK"/>
+                <constraint firstItem="hS6-hX-Bjr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="I5u-ai-1bf"/>
+                <constraint firstItem="Tvq-6O-Bmd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JOW-4e-Yfv"/>
+                <constraint firstItem="elg-lX-AVz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-0.5" id="MUp-iO-52M"/>
+                <constraint firstItem="nYz-Zu-gV9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-0.5" id="Ocb-MZ-OvA"/>
+                <constraint firstAttribute="bottom" secondItem="ESf-Qw-d5g" secondAttribute="bottom" constant="8" id="T20-yj-k7G"/>
+                <constraint firstItem="GaA-nI-PWU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="UJS-EU-A2Q"/>
+                <constraint firstItem="GaA-nI-PWU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="btN-8T-WTB"/>
+                <constraint firstItem="elg-lX-AVz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="fNW-6Z-alq"/>
+                <constraint firstAttribute="trailing" secondItem="ESf-Qw-d5g" secondAttribute="trailing" constant="8" id="gez-ZV-Bpq"/>
+                <constraint firstItem="6pV-wE-JDU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ioN-6k-uSd"/>
+                <constraint firstItem="6pV-wE-JDU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="msi-Dw-tid"/>
+                <constraint firstAttribute="trailing" secondItem="hS6-hX-Bjr" secondAttribute="trailing" constant="8" id="ral-tM-FRv"/>
+                <constraint firstAttribute="bottom" secondItem="cad-F5-JQj" secondAttribute="bottom" constant="8" id="ta7-ns-f1m"/>
+                <constraint firstAttribute="trailing" secondItem="Tvq-6O-Bmd" secondAttribute="trailing" constant="8" id="uxR-L2-VQ5"/>
+                <constraint firstItem="nYz-Zu-gV9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="x3Z-XL-vhP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
